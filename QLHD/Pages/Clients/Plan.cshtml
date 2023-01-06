@@ -1,0 +1,36 @@
+﻿@page
+@model QLHD.Pages.Clients.PlanModel
+@{
+}
+<br>
+<h2>List of Plan</h2>
+<a class='btn btn-primary btn-sm' href='/Clients/CreatePlan'> New Plan</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id plan</th>
+            <th>Tên hoạt động</th>
+            <th>Thời gian</th>
+            <th>Địa điểm</th>
+            <th>cấp hoạt động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listPlans)
+        {
+            <tr>
+                <td>@item.id_plan</td>
+                <td>@item.title</td>
+                <td>@item.time</td>
+                <td>@item.place</td>
+                <td>@item.level</td>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Clients/Edit?id=@item.id_plan">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Clients/Delete?id=@item.id_plan">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

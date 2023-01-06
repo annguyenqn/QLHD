@@ -10,7 +10,6 @@ namespace QLHD.Pages.Clients
         public List<ClientInfo> listClients = new List<ClientInfo>();
         public void OnGet()
         {
-
               ConnectionStringMananger cmng = new ConnectionStringMananger();
                string connectionString =  cmng.getconnection();
 
@@ -33,14 +32,11 @@ namespace QLHD.Pages.Clients
                             }
                         }
                     } 
-                }
-            
-
-          
-
+                }   
         }
     }
     public class ClientInfo{
+        
         public string id_SV;
         public string userPass;
         public string fullName;
