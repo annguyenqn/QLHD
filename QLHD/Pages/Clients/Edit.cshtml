@@ -1,0 +1,42 @@
+﻿@page
+@model QLHD.Pages.Clients.EditModel
+@{
+}
+<br>
+<h2>Edit User</h2>
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Ma sinh vien</label>
+        <div class="col-sm-6">
+            <input disabled type="text" class="form-control" name="id_SV" value="@Model.clientInfo.id_SV" />
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Ho va ten</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.clientInfo.fullName" />
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Quyen han</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="permision" value="@Model.clientInfo.permision" />
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+
+        </div>
+    </div>
+
+</form>
+
