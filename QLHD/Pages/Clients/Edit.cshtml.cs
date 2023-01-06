@@ -8,13 +8,15 @@ namespace QLHD.Pages.Clients
     public class EditModel : PageModel
     {
         public ClientInfo clientInfo = new ClientInfo();
+       
         public void OnGet()
         {
             String id_SV = Request.Query["id"];
 
             try
             {
-                String connectionString = "Data Source=LAPTOP-L5VK15FG\\THEANDEV;Initial Catalog=Activity;Integrated Security=True";
+                ConnectionStringMananger cmng = new ConnectionStringMananger();
+                string connectionString = cmng.getconnection();
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -52,7 +54,8 @@ namespace QLHD.Pages.Clients
             clientInfo.permision = Request.Form["permision"];
             try
             {
-                String connectionString = "Data Source=LAPTOP-L5VK15FG\\THEANDEV;Initial Catalog=Activity;Integrated Security=True";
+                ConnectionStringMananger cmng = new ConnectionStringMananger();
+                string connectionString = cmng.getconnection();
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

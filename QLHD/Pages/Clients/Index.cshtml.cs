@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace QLHD.Pages.Clients
 {
@@ -9,9 +10,10 @@ namespace QLHD.Pages.Clients
         public List<ClientInfo> listClients = new List<ClientInfo>();
         public void OnGet()
         {
-            try
-            {
-                String connectionString = "Data Source=LAPTOP-L5VK15FG\\THEANDEV;Initial Catalog=Activity;Integrated Security=True";
+
+              ConnectionStringMananger cmng = new ConnectionStringMananger();
+               string connectionString =  cmng.getconnection();
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -32,12 +34,9 @@ namespace QLHD.Pages.Clients
                         }
                     } 
                 }
-            }
+            
 
-            catch(Exception ex)
-            {
-
-            }
+          
 
         }
     }

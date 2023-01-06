@@ -21,7 +21,8 @@ namespace QLHD.Pages.Clients
             successadd = "Thêm thành công";
             try
             {
-                String connectionString = "Data Source=LAPTOP-L5VK15FG\\THEANDEV;Initial Catalog=Activity;Integrated Security=True";
+                ConnectionStringMananger cmng = new ConnectionStringMananger();
+                string connectionString = cmng.getconnection();
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
