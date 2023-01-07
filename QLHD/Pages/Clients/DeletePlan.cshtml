@@ -1,0 +1,27 @@
+﻿@page
+@using System.Data.SqlClient;
+    using QLHD.Pages;
+@{
+    try
+    {
+        String id_plan = Request.Query["idplan"];
+        ConnectionStringMananger cmng = new ConnectionStringMananger();
+        string connectionString = cmng.getconnection();
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "delete from plans where id_plan=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id_plan);
+                command.ExecuteNonQuery();
+
+            }
+        }
+    }
+    catch
+    {
+
+    }
+    Response.Redirect("/Clients/plan");
+}
