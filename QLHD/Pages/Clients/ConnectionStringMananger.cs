@@ -7,7 +7,7 @@ namespace QLHD.Pages.Clients
     {
         public string getconnection()
         {
-            return "Data Source=LAPTOP-L5VK15FG\\THEANDEV;Initial Catalog=Activity;Integrated Security=True;";
+            return "Data Source=9H1ENY893ZBJDQQ\\LEEGNUH;Initial Catalog=Activity;Integrated Security=True;";
         }
     }
 }
