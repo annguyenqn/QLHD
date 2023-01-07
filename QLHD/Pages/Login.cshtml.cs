@@ -42,7 +42,7 @@ namespace QLHD.Pages
                 {
                     if (SessionLogin.permision == "admin")
                     {
-                        Response.Redirect("/");
+                        Response.Redirect("/clients/index");
                     }    
                 } 
                     

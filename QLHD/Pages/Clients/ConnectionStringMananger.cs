@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 namespace QLHD.Pages.Clients
 {
@@ -7,7 +8,7 @@ namespace QLHD.Pages.Clients
     {
         public string getconnection()
         {
-            return "Data Source=9H1ENY893ZBJDQQ\\LEEGNUH;Initial Catalog=Activity;Integrated Security=True;";
+            return "Data Source=LAPTOP-L5VK15FG\\THEANDEV;Initial Catalog=Activity;Integrated Security=True";
         }
     }
 }
